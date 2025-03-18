@@ -63,6 +63,17 @@
 
             });
         }
+        function sortearAmigo() {
+            if (amigos.length === 0) {
+                alert("Debe ingresar al menos un nombre antes de sortear.");
+                return;
+            }
+
+            let indiceAleatorio = Math.floor(Math.random() * amigos.length);
+            let amigoSorteado = amigos[indiceAleatorio];
+
+            document.getElementById("resultado").innerHTML = `<li>🎉 ${amigoSorteado} es el amigo secreto! 🎁</li>`;
+        }
     </script>
     <script src="app.js" defer></script>
 </body>
