@@ -36,6 +36,34 @@
         </section>
     </main>
 
+    <script>
+        let amigos = [];
+
+        function agregarAmigo() {
+            let input = document.getElementById("amigo");
+            let nombre = input.value.trim();
+
+            if (nombre !== "" && !amigos.includes(nombre)) {
+                amigos.push(nombre);
+                actualizarLista();
+                input.value = ""; // Limpiar el input
+            } else {
+                alert("Por favor, inserte un nombre.");
+            }
+        }
+
+        function actualizarLista() {
+            let lista = document.getElementById("listaAmigos");
+            lista.innerHTML = ""; // Limpiar la lista antes de actualizar
+
+            amigos.forEach(nombre => {
+                let li = document.createElement("li");
+                li.textContent = nombre;
+                lista.appendChild(li);
+
+            });
+        }
+    </script>
     <script src="app.js" defer></script>
 </body>
 </html>
